@@ -5,7 +5,6 @@
  */
 package Shapes3D;
 
-import Shapes2D.Diem2D;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import javax.swing.JButton;
@@ -22,7 +21,6 @@ public class InputData {
  
     public static JTextField x, y, z, r, dai, rong, cao;
     public static JButton nutVe, nutXoa;
-    public static Diem2D tamBanh = new Diem2D();
     public static int bkBanh;
     public static void veToaDo (Graphics2D g) {
         g.setColor(Color.white);

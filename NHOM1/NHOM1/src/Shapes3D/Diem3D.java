@@ -12,6 +12,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import Shapes2D.*;
+import java.awt.Point;
 
 /**
  *
@@ -128,13 +129,11 @@ public class Diem3D {
         Diem3D a = new Diem3D(x, y, z);
 
         //Chuyển đổi sang 2D bằng phép chiếu Cabinet
-        Diem2D A = Cabinet.chieu(a.getX(), a.getY(), a.getZ());
+       Point A = Cabinet.chieu(a.getX(), a.getY(), a.getZ());
         
         //Vẽ điểm
-        A.draw(g);
+      
 
         //Vẽ tên điểm
-        g.setColor(Color.red);
-        g.drawString("A", InputData.Width / 2 + A.getX() * 5 + 10, InputData.Height / 2 - A.getY() * 5 - 7);
     }
 }

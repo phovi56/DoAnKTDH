@@ -5,7 +5,7 @@
  */
 package Shapes3D;
 
-import Shapes2D.Diem2D;
+import java.awt.Point;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import javax.swing.JButton;
@@ -82,78 +82,6 @@ public class HinhHop extends Line{
         this.cao = cao;
     }
 
-    public JFrame nhapToaDo3D() {
-        JFrame frame = new JFrame("HÌNH HỘP");
-        frame.setSize(subFrameWidth, subFrameHight);
-        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        frame.setLocationRelativeTo(null);
-        frame.setLayout(null);
-        frame.getContentPane().setBackground(Color.ORANGE);
-
-        JLabel labelX, labelY, labelZ, labelDai, labelRong, labelCao;
-
-        labelX = new JLabel("x:");
-        labelX.setBounds(10, 25, labelSize, 25);
-        frame.add(labelX);
-        InputData.x = new JTextField();
-        InputData.x.setBounds(60, 25, textSize, 25);
-        frame.add(InputData.x);
-
-        labelY = new JLabel("y:");
-        labelY.setBounds(150, 25, labelSize, 25);
-        frame.add(labelY);
-        InputData.y = new JTextField();
-        InputData.y.setBounds(180, 25, textSize, 25);
-        frame.add(InputData.y);
-
-        labelZ = new JLabel("z:");
-        labelZ.setBounds(10, 75, labelSize, 25);
-        frame.add(labelZ);
-        InputData.z = new JTextField();
-        InputData.z.setBounds(60, 75, textSize, 25);
-        frame.add(InputData.z);
-
-        labelDai = new JLabel("Dài:");
-        labelDai.setBounds(150, 75, labelSize, 25);
-        frame.add(labelDai);
-        InputData.dai = new JTextField();
-        InputData.dai.setBounds(180, 75, textSize, 25);
-        frame.add(InputData.dai);
-
-        labelRong = new JLabel("Rộng:");
-        labelRong.setBounds(10, 125, labelSize, 25);
-        frame.add(labelRong);
-        InputData.rong = new JTextField();
-        InputData.rong.setBounds(60, 125, textSize, 25);
-        frame.add(InputData.rong);
-
-        labelCao = new JLabel("Cao:");
-        labelCao.setBounds(150, 125, labelSize, 25);
-        frame.add(labelCao);
-        InputData.cao = new JTextField();
-        InputData.cao.setBounds(180, 125, textSize, 25);
-        frame.add(InputData.cao);
-
-        InputData.nutVe = new JButton("VẼ");
-        InputData.nutVe.setFocusPainted(false);     	// xoa duong vien tren button khi click
-        InputData.nutVe.setBackground(Color.white);	//background cho button
-        InputData.nutVe.setContentAreaFilled(false);	//làm cho button khong con giong button nua
-        InputData.nutVe.setOpaque(true);                  //làm cho nen khong trong suốt
-        InputData.nutVe.setBounds(60, 175, textSize, 30);
-        frame.add(InputData.nutVe);
-
-        InputData.nutXoa = new JButton("XÓA");
-        InputData.nutXoa.setFocusPainted(false);
-        InputData.nutXoa.setBackground(Color.white);
-        InputData.nutXoa.setContentAreaFilled(false);
-        InputData.nutXoa.setOpaque(true);
-        InputData.nutXoa.setBounds(180, 175, textSize, 30);
-        frame.add(InputData.nutXoa);
-        frame.setResizable(false);
-        frame.setVisible(true);
-        return frame;
-    }
-
     public void xoaDuLieu() {
         InputData.x.setText("");
         InputData.x.requestFocus();
@@ -206,59 +134,46 @@ public class HinhHop extends Line{
         Diem3D c2 = new Diem3D(x + dai, y + rong, z + cao);
 
         //chuyển đổi sang 2D bằng phép chiếu Cabinet
-        Diem2D A1 = Cabinet.chieu(a1.getX(), a1.getY(), a1.getZ());
-        Diem2D B1 = Cabinet.chieu(b1.getX(), b1.getY(), b1.getZ());
-        Diem2D C1 = Cabinet.chieu(c1.getX(), c1.getY(), c1.getZ());
-        Diem2D D1 = Cabinet.chieu(d1.getX(), d1.getY(), d1.getZ());
+        Point A1 = Cabinet.chieu(a1.getX(), a1.getY(), a1.getZ());
+        Point B1 = Cabinet.chieu(b1.getX(), b1.getY(), b1.getZ());
+        Point C1 = Cabinet.chieu(c1.getX(), c1.getY(), c1.getZ());
+        Point D1 = Cabinet.chieu(d1.getX(), d1.getY(), d1.getZ());
 
-        Diem2D A2 = Cabinet.chieu(a2.getX(), a2.getY(), a2.getZ());
-        Diem2D B2 = Cabinet.chieu(b2.getX(), b2.getY(), b2.getZ());
-        Diem2D C2 = Cabinet.chieu(c2.getX(), c2.getY(), c2.getZ());
-        Diem2D D2 = Cabinet.chieu(d2.getX(), d2.getY(), d2.getZ());
+        Point A2 = Cabinet.chieu(a2.getX(), a2.getY(), a2.getZ());
+        Point B2 = Cabinet.chieu(b2.getX(), b2.getY(), b2.getZ());
+        Point C2 = Cabinet.chieu(c2.getX(), c2.getY(), c2.getZ());
+        Point D2 = Cabinet.chieu(d2.getX(), d2.getY(), d2.getZ());
 
         //Vẽ các đoạn thẳng đáy dưới
-        Line A1B1  = new Line();
-        A1B1.Net_Dut( A1.getX(), A1.getY(), B1.getX(), B1.getY());
-        A1B1.draw(g);
-        Lineof3D B1C1 = new Lineof3D(B1.getX(), B1.getY(), C1.getX(), C1.getY());
+        Line A1B1  = new Line(A1, B1, 5, Color.yellow);
+        A1B1.dashedLine(g);
+        Line B1C1 = new Line(B1, C1, 5, Color.yellow);
         B1C1.draw(g);
-        Lineof3D D1C1 = new Lineof3D(D1.getX(), D1.getY(), C1.getX(), C1.getY());
+        Line D1C1 = new Line(D1, C1, 5, Color.yellow);
         D1C1.draw(g);
-         Line D1A1  = new Line();
-        D1A1.Net_Dut(D1.getX(), D1.getY(), A1.getX(), A1.getY());
-        D1A1.draw(g);
+        Line D1A1  = new Line(D1, A1, 5, Color.yellow);
+        D1A1.dashedLine(g);
 
         //Vẽ các đoạn thẳng đáy trên
-        Lineof3D A2B2 = new Lineof3D(A2.getX(), A2.getY(), B2.getX(), B2.getY());
+        Line A2B2 = new Line(A2, B2, 5, Color.yellow);
         A2B2.draw(g);
-        Lineof3D B2C2 = new Lineof3D(B2.getX(), B2.getY(), C2.getX(), C2.getY());
+        Line B2C2 = new Line(B2, C2, 5, Color.yellow);
         B2C2.draw(g);
-        Lineof3D D2C2 = new Lineof3D(D2.getX(), D2.getY(), C2.getX(), C2.getY());
+        Line D2C2 = new Line(D2, C2, 5, Color.yellow);
         D2C2.draw(g);
-        Lineof3D D2A2 = new Lineof3D(D2.getX(), D2.getY(), A2.getX(), A2.getY());
+        Line D2A2 = new Line(D2, A2, 5, Color.yellow);
         D2A2.draw(g);
 
         //Vẽ các cạnh bên
-        Line A1A2 = new Line();
-        A1A2.Net_Dut(A1.getX(), A1.getY(), A2.getX(), A2.getY());
-        A1A2.draw(g);
-        Lineof3D B1B2 = new Lineof3D(B1.getX(), B1.getY(), B2.getX(), B2.getY());
+        Line A1A2 = new Line(A1, A2, 5, Color.yellow);
+        A1A2.dashedLine(g);
+        Line B1B2 = new Line(B1, B2, 5, Color.yellow);
         B1B2.draw(g);
-        Lineof3D C1C2 = new Lineof3D(C1.getX(), C1.getY(), C2.getX(), C2.getY());
+        Line C1C2 = new Line(C1, C2, 5, Color.yellow);
         C1C2.draw(g);
-        Lineof3D D1D2 = new Lineof3D(D1.getX(), D1.getY(), D2.getX(), D2.getY());
+        Line D1D2 = new Line(D1, D2, 5, Color.yellow);
         D1D2.draw(g);
 
-        //Vẽ tên các điểm
-        g.setColor(Color.red);
-        g.drawString("A1", InputData.Width / 2 + A1.getX() * 5 + 5, InputData.Height / 2 - A1.getY() * 5 - 5);
-        g.drawString("B1", InputData.Width / 2 + B1.getX() * 5 + 5, InputData.Height / 2 - B1.getY() * 5 - 5);
-        g.drawString("C1", InputData.Width / 2 + C1.getX() * 5 - 10, InputData.Height / 2 - C1.getY() * 5 + 15);
-        g.drawString("D1", InputData.Width / 2 + D1.getX() * 5 - 10, InputData.Height / 2 - D1.getY() * 5 + 15);
-        g.drawString("A2", InputData.Width / 2 + A2.getX() * 5 + 5, InputData.Height / 2 - A2.getY() * 5 - 7);
-        g.drawString("B2", InputData.Width / 2 + B2.getX() * 5 + 5, InputData.Height / 2 - B2.getY() * 5 - 7);
-        g.drawString("C2", InputData.Width / 2 + C2.getX() * 5 - 10, InputData.Height / 2 - C2.getY() * 5 - 5);
-        g.drawString("D2", InputData.Width / 2 + D2.getX() * 5 - 10, InputData.Height / 2 - D2.getY() * 5 - 5);
-
+        
     }   
 }
