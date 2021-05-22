@@ -28,7 +28,7 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Component id="panelOperation" alignment="0" max="32767" attributes="0"/>
-          <Component id="panel1" alignment="0" max="32767" attributes="0"/>
+          <Component id="panelHead" alignment="0" max="32767" attributes="0"/>
           <Component id="panelDrawing" max="32767" attributes="0"/>
           <Component id="jSeparator1" alignment="1" max="32767" attributes="0"/>
       </Group>
@@ -38,7 +38,7 @@
           <Group type="102" alignment="0" attributes="0">
               <Component id="panelOperation" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="panel1" min="-2" max="-2" attributes="0"/>
+              <Component id="panelHead" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jSeparator1" min="-2" pref="2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
@@ -54,7 +54,7 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+                  <Component id="panelSetUp" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="panelDrawingArea" pref="908" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
@@ -66,7 +66,7 @@
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="panelDrawingArea" pref="486" max="32767" attributes="0"/>
-                      <Component id="jPanel1" max="32767" attributes="0"/>
+                      <Component id="panelSetUp" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -92,22 +92,20 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="157" max="-2" attributes="0"/>
-                      <Component id="panel2D" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                  </Group>
+                  <EmptySpace min="0" pref="906" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                      <Component id="panel2D" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="50" max="32767" attributes="0"/>
-                  </Group>
+                  <EmptySpace min="0" pref="484" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
+          </Layout>
+        </Container>
+        <Container class="javax.swing.JPanel" name="panelSetUp">
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+            <Property name="useNullLayout" type="boolean" value="false"/>
           </Layout>
           <SubComponents>
             <Container class="javax.swing.JPanel" name="panel2D">
@@ -120,6 +118,11 @@
                   </Border>
                 </Property>
               </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="0" y="0" width="-1" height="-1"/>
+                </Constraint>
+              </Constraints>
 
               <Layout>
                 <DimensionLayout dim="0">
@@ -409,26 +412,6 @@
                 </Component>
               </SubComponents>
             </Container>
-          </SubComponents>
-        </Container>
-        <Container class="javax.swing.JPanel" name="jPanel1">
-
-          <Layout>
-            <DimensionLayout dim="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="panel3D" alignment="0" max="32767" attributes="0"/>
-              </Group>
-            </DimensionLayout>
-            <DimensionLayout dim="1">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="panel3D" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  </Group>
-              </Group>
-            </DimensionLayout>
-          </Layout>
-          <SubComponents>
             <Container class="javax.swing.JPanel" name="panel3D">
               <Properties>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -439,6 +422,11 @@
                   </Border>
                 </Property>
               </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="0" y="0" width="-1" height="-1"/>
+                </Constraint>
+              </Constraints>
 
               <Layout>
                 <DimensionLayout dim="0">
@@ -779,7 +767,7 @@
         </Component>
       </SubComponents>
     </Container>
-    <Container class="javax.swing.JPanel" name="panel1">
+    <Container class="javax.swing.JPanel" name="panelHead">
 
       <Layout>
         <DimensionLayout dim="0">
@@ -816,8 +804,8 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Group type="102" attributes="0">
                               <Component id="butMove" min="-2" pref="45" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="butSelect" min="-2" pref="45" max="-2" attributes="0"/>
@@ -828,11 +816,9 @@
                               <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
                               <Component id="cbSym" min="-2" pref="96" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="cbGrid" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="cbAxis" min="-2" max="-2" attributes="0"/>
+                              <Component id="cbGrid" max="32767" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
+                          <Group type="102" attributes="0">
                               <Component id="butUndo" min="-2" pref="45" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="butRedo" min="-2" pref="45" max="-2" attributes="0"/>
@@ -846,11 +832,16 @@
                               <Component id="cbCustomLine" min="-2" pref="96" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="cbCoordinate" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
                               <Component id="rb2D" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="rb3D" min="-2" max="-2" attributes="0"/>
                           </Group>
+                          <Component id="cbAxis" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="229" max="-2" attributes="0"/>
                   </Group>
@@ -860,34 +851,35 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="butUndo" min="-2" pref="30" max="-2" attributes="0"/>
                           <Component id="butRedo" min="-2" pref="30" max="-2" attributes="0"/>
                           <Component id="butClean" min="-2" pref="30" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="cbCustomLine" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="cbCoordinate" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="rb2D" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="rb3D" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
                           <Component id="butDraw1" min="-2" pref="30" max="-2" attributes="0"/>
                           <Component id="butErase" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="cbCustomLine" alignment="1" max="32767" attributes="0"/>
+                          <Component id="cbCoordinate" max="32767" attributes="0"/>
+                          <Component id="rb2D" alignment="0" max="32767" attributes="0"/>
+                          <Component id="rb3D" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="cbGrid" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="cbSym" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="cbAxis" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cbSym" alignment="0" max="32767" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Component id="butMove" min="-2" pref="29" max="-2" attributes="0"/>
+                                      <Component id="butSelect" min="-2" pref="30" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="butColour" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="butPaint" min="-2" pref="30" max="-2" attributes="0"/>
+                                  <Component id="cbGrid" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="cbAxis" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="butMove" min="-2" pref="29" max="-2" attributes="0"/>
-                              <Component id="butSelect" min="-2" pref="30" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="butColour" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
-                          <Component id="butPaint" min="-2" pref="30" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
