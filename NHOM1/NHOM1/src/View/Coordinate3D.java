@@ -12,7 +12,7 @@ import javax.swing.JPanel;
  *
  * @author DELL
  */
-public class Coordinate extends JPanel{
+public class Coordinate3D extends JPanel{
     public void drawCoor(JPanel panel, Graphics g){
         int w = panel.getWidth();
         int h = panel.getHeight();

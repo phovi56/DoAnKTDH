@@ -71,7 +71,7 @@ public class Circle{
     
     void putPixel(int x, int y, Graphics g, Color c){
         g.setColor(c);
-        g.fillRect(x, y, size, size);
+        g.fillRect(x-size/2, y-size/2, size, size);
     }
     
     void put8Pixel(int x0, int y0, int x, int y, Graphics g, Color c) {
@@ -99,16 +99,16 @@ public class Circle{
             if(p<0) p = p+4*x+6;
             else{
                 p = p + 4*(x-y) + 10;
-                y = y-size;
+                y = y-2;
             }
-            x = x+size;
+            x = x+2;
         }
     }
 
     public void init(Point a, Point b, int size, Color color) {
         this.setA(a);
         this.setB(b);
-        this.setR((A.x + B.x)/2);
+        this.setR(Math.abs((a.x - b.x))/2);
         this.setSize(size);
         this.setColor(color);
     }

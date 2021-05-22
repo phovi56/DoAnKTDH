@@ -5,6 +5,7 @@
  */
 package View;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import javax.swing.JPanel;
 
@@ -13,6 +14,8 @@ import javax.swing.JPanel;
  * @author DELL
  */
 public class Coordinate extends JPanel{
+    int pixel =5;
+    
     public void drawCoor(JPanel panel, Graphics g){
         int w = panel.getWidth();
         int h = panel.getHeight();
@@ -22,12 +25,16 @@ public class Coordinate extends JPanel{
         
     }
     
-    public void drawGrill(JPanel panel, Graphics g){
+    public void drawGrid(JPanel panel, Graphics g){
+        g.setColor(Color.lightGray);
         int w = panel.getWidth();
         int h = panel.getHeight();
         
-        for(int i = 1; i<w/2; i++){
-            
+        for (int i = 1; i < w / pixel; i++) {
+            if(i != w/2){
+                g.drawLine(i * pixel, 0, i * pixel, h);
+            }
+            g.drawLine(0, i * pixel, w, i * pixel);
         }
     }
 }

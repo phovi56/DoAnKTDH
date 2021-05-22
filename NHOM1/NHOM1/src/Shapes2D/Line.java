@@ -23,6 +23,11 @@ public class Line{
     public Line() {
     }
 
+    public Line(Point A, Point B){
+        this.A = A;
+        this.B = B;
+    }
+    
     public Line(Point A, Point B, int size, Color color) {
         this.A = A;
         this.B = B;
@@ -70,7 +75,10 @@ public class Line{
     }
 
     public void draw(Graphics g) {
+        System.out.println(A + "\n" + B);
         line(g, A.x, B.x, A.y, B.y);
+                System.out.println("hello");
+
     }
     
     public void line(Graphics g, int x1, int x2, int y1, int y2){
@@ -80,7 +88,7 @@ public class Line{
         dy = Math.abs(y2 - y1);
         x = x1; y = y1;
         int pushX = size, pushY = size;
-        g.fillRect(x, y, size, size);
+        g.fillRect(x-size/2, y-size/2, size, size);
         if (x2 - x1 < 0) {
             pushX = -pushX;
         }
@@ -89,7 +97,7 @@ public class Line{
         }
         if (dx >= dy) {
             p = 2*dy - dx;
-            while (x != x2){
+            do{
                 if (p < 0){
                     p += 2*dy;
                 }else{
@@ -97,12 +105,12 @@ public class Line{
                     y += pushY;
                 }
                 x += pushX;
-                g.fillRect(x, y, size, size);
+                g.fillRect(x-size/2, y-size/2, size, size);
                 if(Math.abs(x - x2) < size)    return;
-            }
+            }while (x != x2);
         } else {
             p = 2*dx - dy;
-            while (y != y2){
+            do{
                 if (p < 0){
                     p += 2*dx;
                 } else {
@@ -110,9 +118,9 @@ public class Line{
                     x += pushX;
                 }
                 y += pushY;
-                g.fillRect(x, y, size, size);
+                g.fillRect(x-size/2, y-size/2, size, size);
                 if(Math.abs(y - y2) < size)    return;
-            }
+            }while (y != y2);
         }
     }
     
