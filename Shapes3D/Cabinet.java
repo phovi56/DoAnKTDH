@@ -5,17 +5,19 @@
  */
 package Shapes3D;
 
-import Shapes2D.Point2D;
+import java.awt.Point;
+
+
 
 /**
  *
- * @author AD
+ * @author Admin
  */
 public class Cabinet {
-    public static Point2D p(int x, int y, int z) {
+    public static Point chieu(int x, int y, int z) {
         int X = (int) (x - y * (Math.sqrt(2)) / 4);
         int Y = (int) (z - y * (Math.sqrt(2)) / 4);
-        Point2D d = new Point2D(X, Y);
+        Point d = new Point(X, Y);
         return d;
     }
 }
