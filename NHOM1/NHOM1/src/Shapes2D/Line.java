@@ -411,7 +411,7 @@ public class Line{
             point1 = B.x - 30;
             point2 = B.x + 30;
             line(g, B.x, point1, B.x, B.y - 30);
-            line(g, B.x, point2, B.y, B.y - 30);
+            line(g, B.x, point2, B.x, B.y - 30);
         }else if(Math.abs(dx) > Math.abs(dy)){
             point1 = B.y - 30;
             point2 = B.y + 30;
