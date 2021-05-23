@@ -75,10 +75,7 @@ public class Line{
     }
 
     public void draw(Graphics g) {
-        System.out.println(A + "\n" + B);
         line(g, A.x, B.x, A.y, B.y);
-                System.out.println("hello");
-
     }
     
     public void line(Graphics g, int x1, int x2, int y1, int y2){

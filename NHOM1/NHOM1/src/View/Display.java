@@ -859,19 +859,8 @@ public class Display extends javax.swing.JFrame {
                 line.init(start, end, size, color);
                 line.draw(panelDrawingArea.getGraphics());
             }else if(butRectangle.isSelected()){
-//                Point B = new Point(end.x, start.y);
-//                Point D = new Point(start.x, end.y);
-//                line = new Line(start, B, size, color);
-//                line.draw(panelDrawingArea.getGraphics());
-//                line = new Line(B, end, size, color);
-//                line.draw(panelDrawingArea.getGraphics());
-//                line = new Line(end, D, size, color);
-//                line.draw(panelDrawingArea.getGraphics());
-//                line = new Line(D, start, size, color);
-//                line.draw(panelDrawingArea.getGraphics());
                 rect = new Rectangle();
                 rect.init(start, end, size, color);
-                System.out.println("Toi Day Roi");
                 rect.draw(panelDrawingArea.getGraphics());
             }else if(butCircle.isSelected()){
                 circle = new Circle();
