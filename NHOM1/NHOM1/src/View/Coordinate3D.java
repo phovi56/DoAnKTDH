@@ -5,7 +5,6 @@
  */
 package View;
 
-import java.awt.Color;
 import java.awt.Graphics;
 import javax.swing.JPanel;
 
@@ -13,28 +12,25 @@ import javax.swing.JPanel;
  *
  * @author DELL
  */
-public class Coordinate extends JPanel{
-    int pixel =5;
-    
+public class Coordinate3D extends JPanel{
     public void drawCoor(JPanel panel, Graphics g){
         int w = panel.getWidth();
         int h = panel.getHeight();
         
-        g.drawLine(0, h/2, w, h/2);
-        g.drawLine(w/2, 0, w/2, h);
-        
+        g.drawLine(w, h/2, w/2, h/2);
+        g.drawLine(w/2, 0, w/2, h/2);
+        g.drawLine(w/2, h/2, 150, 550);
+        g.drawString("X", w-20, h/2 -20);
+        g.drawString("Y", w/2-20, 20);
+        g.drawString("Z", 150-15, 550-15);
     }
     
-    public void drawGrid(JPanel panel, Graphics g){
-        g.setColor(Color.lightGray);
+    public void drawGrill(JPanel panel, Graphics g){
         int w = panel.getWidth();
         int h = panel.getHeight();
         
-        for (int i = 1; i < w / pixel; i++) {
-            if(i != w/2){
-                g.drawLine(i * pixel, 0, i * pixel, h);
-            }
-            g.drawLine(0, i * pixel, w, i * pixel);
+        for(int i = 1; i<w/2; i++){
+            
         }
     }
 }

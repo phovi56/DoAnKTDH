@@ -13,7 +13,7 @@ import java.awt.Point;
  *
  * @author DELL
  */
-public class Rectangle{
+public class Rectangle implements Shape2D{
     private Point A, B, C, D;
     private int size;
     private Color color;
@@ -77,19 +77,20 @@ public class Rectangle{
     public void setColor(Color color) {
         this.color = color;
     }
-
+    
+    @Override
     public void draw(Graphics g) {
         g.setColor(color);
-        Line AB, BC, CD, DA;
+        Line line;
         
-        AB = new Line(A, B, size, color);
-        AB.draw(g);
-        BC = new Line(B, C, size, color);
-        BC.draw(g);
-        CD = new Line(C, D, size, color);
-        CD.draw(g);
-        DA = new Line(D, A, size, color);
-        DA.draw(g);
+        line = new Line(A, B, size, color);
+        line.draw(g);
+        line = new Line(B, C, size, color);
+        line.draw(g);
+        line = new Line(C, D, size, color);
+        line.draw(g);
+        line = new Line(D, A, size, color);
+        line.draw(g);
     }
     
     public void recDash(Graphics g){
@@ -162,12 +163,14 @@ public class Rectangle{
         line.arrowLine(g);
     }
 
-    public void init(Point a, Point b, int size, Color color) {
-        this.setA(a);
-        this.setB(new Point(b.x, a.y));
-        this.setC(b);
-        this.setD(new Point(a.x, b.y));
+    @Override
+    public void init(Point start, Point end, int size, Color color) {
+        this.setA(start);
+        this.setB(new Point(end.x, start.y));
+        this.setC(end);
+        this.setD(new Point(start.x, end.y));
         this.setColor(color);
+        this.setSize(size);
     }
     
 }
